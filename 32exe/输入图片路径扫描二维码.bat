@@ -1,0 +1,1 @@
+qr_scan.exe "./output/test001.jpg"
