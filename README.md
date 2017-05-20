@@ -1,63 +1,60 @@
-*****************************ʹ��ǰ�����Ȳ�����Ӧ�Ļ���*******************************
+# 使用前，请先部署相应的环境
 
-*****************************����������뿴��setEnvironment.txt��*********************
+## 具体情况，请看“setEnvironment.txt”
 
 
 -------------qr_scan.py-------------
 
-	���򣺶�ά��ɨ��
+	程序：二维码扫描
 
 
-	���ܣ�ɨ�赥�Ŷ�ά��
+	功能：扫描单张二维码
 
-	������������������ ���ļ��������ɽ���ɨ��
-	ʾ��1��python qr_scan.py test.jpg
-	ʾ��2��python qr_scan.py ./output/test.jpg
+	操作：在命令行输入 “文件名”即可进行扫描
+	示例1：python qr_scan.py test.jpg
+	示例2：python qr_scan.py ./output/test.jpg
 	
 	
-	˵����1.���ڵ�ǰĿ¼�´���һ��output�ļ���
+	说明：1.会在当前目录下创建一个output文件夹
 
-		/output/qr_data.iniΪ���ݿ��ļ�������ɨ����
+		/output/qr_data.ini为数据库文件，保存扫描结果
 
 
 -------------qr_create.py-------------
 
-	���򣺶�ά������
+	程序：二维码生成
 
-	���ܣ����ɵ��Ŷ�ά��(֧����Ӣ�ģ����֣�����)
+	功能：生成单张二维码(支持中英文，数字，符号)
 
-	������������������ ���ַ����� ��ͼƬ�������ɴ�����ά��
-	ʾ����python qr_create.py "this is test001" "test.jpg"
+	操作：在命令行输入 “字符串” “图片名”即可创建二维码
+	示例：python qr_create.py "this is test001" "test.jpg"
 	
-	˵����1.���ɵĶ�ά��ͼƬĬ�Ϸ��ڵ�ǰĿ¼�µ�output�ļ�����
+	说明：1.生成的二维码图片默认放在当前目录下的output文件夹下
 	
 -------------muti_thread_scan.py-------------
 
-	���򣺶�ά���ļ���ɨ��
+	程序：二维码文件夹扫描
 
 
-	���ܣ����߳�ɨ���ά���ļ���
+	功能：多线程扫描二维码文件夹
 
-	������������������ ���ļ������� ���ļ�������... ���ɽ��ж��߳�ɨ��
-	ʾ��1��python muti_thread_scan.py ��test_all"
-	ʾ��2��python muti_thread_scan.py ��test_all" "test_half"
+	操作：在命令行输入 “文件夹名” “文件夹名”... 即可进行多线程扫描
+	示例1：python muti_thread_scan.py “test_all"
+	示例2：python muti_thread_scan.py “test_all" "test_half"
 	
 	
-	˵����1.���ڵ�ǰĿ¼�´���һ��output�ļ���
+	说明：1.会在当前目录下创建一个output文件夹
 
-		/output/qr_data.iniΪ���ݿ��ļ�������ɨ����
+		/output/qr_data.ini为数据库文件，保存扫描结果
 		
-		/output/error_info.txtΪ�Ƕ�ά��ͼƬ�Ĵ�����Ϣ
+		/output/error_info.txt为非二维码图片的错误信息
 		
-		2.��ֻ����һ���ļ�����ʱ��������е��߳�ɨ��
+		2.当只传入一个文件夹名时，程序进行单线程扫描
 	
 	
-*********����˵��**********
-*
-*�������н����󣬲���رն�����ͣ����
-*
-*������Ҫ�رմ��ڵģ�ע�͵��������һ�е�os.system("pause")����
-*
+### 补充说明
+* 程序运行结束后，不会关闭而是暂停窗口
+* 若有需要关闭窗口的，注释掉程序最后一行的os.system("pause")即可
 
 
 --------------@weekdawn---------------
